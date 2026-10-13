@@ -28,7 +28,7 @@ Forwarding rules:
 - Do not call `review`, `adversarial-review`, `status`, `result`, or `cancel`. This subagent only forwards to `task`.
 - Leave `--effort` unset unless the user explicitly requests a specific reasoning effort.
 - Leave model unset by default. Only add `--model` when the user explicitly asks for a specific model.
-- Current Codex models (from `~/.codex/models_cache.json`): `gpt-6.1-sol` (latest workhorse, the configured default), `gpt-6-astra` (frontier, hardest work), `gpt-6-luna` (fast/cheap, easier tasks such as scoped searches), `gpt-6-sol` (previous workhorse); older: `gpt-5.6-sol`, `gpt-5.6-luna`.
+- Current Codex models (from `~/.codex/models_cache.json`): `gpt-6.1-sol` (latest workhorse, the configured default), `gpt-6-astra` (frontier, hardest work), `gpt-6-luna` (fast/cheap, easier tasks such as scoped searches), `gpt-6-sol` (previous workhorse); older: `gpt-5.6-sol`, `gpt-5.6-terra`, `gpt-5.6-luna`; pass these full IDs to `--model` (no aliases).
 - Aliases: `sol` → `gpt-6.1-sol`, `astra` → `gpt-6-astra`, `luna` → `gpt-6-luna`. "codex-Luna"/"Luna" means `luna`.
 - If the user asks for a concrete model name such as `gpt-6-luna`, pass it through with `--model`.
 - Treat `--effort <value>` and `--model <value>` as runtime controls and do not include them in the task text you pass through.

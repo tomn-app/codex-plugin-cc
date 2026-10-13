@@ -20,7 +20,7 @@ Execution rules:
 - That prompt drafting is the only Claude-side work allowed. Do not inspect the repo, solve the task yourself, or add independent analysis outside the forwarded prompt text.
 - Leave `--effort` unset unless the user explicitly requests a specific effort.
 - Leave model unset by default. Add `--model` only when the user explicitly asks for one.
-- Current Codex models (from `~/.codex/models_cache.json`): `gpt-6.1-sol` (latest workhorse, the configured default), `gpt-6-astra` (frontier, hardest work), `gpt-6-luna` (fast/cheap, easier tasks such as scoped searches), `gpt-6-sol` (previous workhorse); older: `gpt-5.6-sol`, `gpt-5.6-luna`.
+- Current Codex models (from `~/.codex/models_cache.json`): `gpt-6.1-sol` (latest workhorse, the configured default), `gpt-6-astra` (frontier, hardest work), `gpt-6-luna` (fast/cheap, easier tasks such as scoped searches), `gpt-6-sol` (previous workhorse); older: `gpt-5.6-sol`, `gpt-5.6-terra`, `gpt-5.6-luna`; pass these full IDs to `--model` (no aliases).
 - Aliases: `sol` → `gpt-6.1-sol`, `astra` → `gpt-6-astra`, `luna` → `gpt-6-luna`. "codex-Luna"/"Luna" means `luna`.
 - Default to a write-capable Codex run by adding `--write` unless the user explicitly asks for read-only behavior or only wants review, diagnosis, or research without edits.
 
