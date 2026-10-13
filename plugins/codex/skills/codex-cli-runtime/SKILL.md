@@ -20,13 +20,14 @@ Execution rules:
 - That prompt drafting is the only Claude-side work allowed. Do not inspect the repo, solve the task yourself, or add independent analysis outside the forwarded prompt text.
 - Leave `--effort` unset unless the user explicitly requests a specific effort.
 - Leave model unset by default. Add `--model` only when the user explicitly asks for one.
-- Map `spark` to `--model gpt-5.3-codex-spark`.
+- Current Codex models (from `~/.codex/models_cache.json`): `gpt-6.1-sol` (latest workhorse, the configured default), `gpt-6-astra` (frontier, hardest work), `gpt-6-luna` (fast/cheap, easier tasks such as scoped searches), `gpt-6-sol` (previous workhorse); older: `gpt-5.6-sol`, `gpt-5.6-luna`.
+- Aliases: `sol` → `gpt-6.1-sol`, `astra` → `gpt-6-astra`, `luna` → `gpt-6-luna`. "codex-Luna"/"Luna" means `luna`.
 - Default to a write-capable Codex run by adding `--write` unless the user explicitly asks for read-only behavior or only wants review, diagnosis, or research without edits.
 
 Command selection:
 - Use exactly one `task` invocation per rescue handoff.
 - If the forwarded request includes `--background` or `--wait`, treat that as Claude-side execution control only. Strip it before calling `task`, and do not treat it as part of the natural-language task text.
-- If the forwarded request includes `--model`, normalize `spark` to `gpt-5.3-codex-spark` and pass it through to `task`.
+- If the forwarded request includes `--model`, pass aliases (`sol`, `astra`, `luna`) through unchanged; the companion resolves them to `task`.
 - If the forwarded request includes `--effort`, pass it through to `task`.
 - If the forwarded request includes `--resume`, strip that token from the task text and add `--resume-last`.
 - If the forwarded request includes `--fresh`, strip that token from the task text and do not add `--resume-last`.
